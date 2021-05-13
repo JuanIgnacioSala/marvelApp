@@ -15,24 +15,71 @@
     <!-- navbar -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="assets/img/marvel.png" alt="" height="30"></a>
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="assets/marvel.png" alt="" height="50"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search Hero" aria-label="Search">
-                    <button class="btn btn-outline-danger" type="submit">Search</button>
-                </form>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#">FAVOURITES</a>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </nav>
 
-    <!-- cuerpo -->
+    <main>
+        <!-- input -->
+        <section class="background d-flex align-items-center mb-4" id="background">
+            <div class="container heroimg">
+                <h2 class="text-center text pb-3">
+                    explore, search and build your list of
+                    <span class="fst-italic" style="color: red; ;">superheroes</span>
+                </h2>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="search-input" placeholder="Search superheroes">
+                    <button class="btn btn-danger fw-bold ps-5 pe-5" style="text-shadow: 1px 1px 3px black" type="button" id="search-button">SEARCH</button>
+                </div>
+            </div>
+        </section>
 
+
+        <!-- Search All Heroes  -->
+        <section class="container all-heroes" id="all-marvel-section">
+            <div>
+                <h1 class="text" class="fst-italic" style="color: red;">superheroes </h1>
+                <hr class="redHR mb-3">
+                <div class="card-group">
+                    <div class="card">
+                        <img src="${}" class="card-img-top" alt="${}">
+                        <div class="card-body">
+                            <h3 class="card-title">${}</h5>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- Section filter Heroes  -->
+        <section>
+
+        </section>
+
+        <!-- section favorites  -->
+        <section>
+
+        </section>
+    </main>
+
+    <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    <script src="js/api.js"></script>
 </body>
 
 </html>

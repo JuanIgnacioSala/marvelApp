@@ -1,4 +1,4 @@
-.background{
+.background {
     background-image: linear-gradient( rgba(125, 0, 0, 0.5), rgba(10, 10, 10, 0.7)), url('assets/background.jpg');
     background-size: cover;
     background-position: center;
@@ -49,12 +49,5 @@
 }
 
 .imgDetail {
-<<<<<<< HEAD
-    /* width: 120rem !important; */
     margin: 8px !important;
 }
-=======
-    max-width: 400px !important;
-    margin: 20px !important;
-}
->>>>>>> 0580246cbfce53beb226a33c772a1a0722c823b8

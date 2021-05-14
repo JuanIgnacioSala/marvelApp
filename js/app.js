@@ -17,7 +17,6 @@ const publicKey = "a6cbb63939c6bb41f89092331e8246b9";
 const hash = "4ad0b35656da2eddf174505d3d41b2c9";
 const apiAutentication = `ts=1&apikey=${publicKey}&hash=${hash}`;
 
-
 const getAllHeroes = (offset) => {
     URL = `https://gateway.marvel.com:443/v1/public/characters?orderBy=name&offset=${offset}&${apiAutentication}`;
     fetch(URL)
@@ -45,8 +44,27 @@ const getHeroesByName = (search, offset) => {
 };
 
 // GET HEROES BY ID 
+async function getHeroesById(id) {
+    try {
+        const response = await fetch(
+            `https://gateway.marvel.com:443/v1/public/characters/${id}?${apiAutentication}`
+        );
+        const characterJson = await response.json();
+        const character = characterJson.data.results[0];
+        return character;
+    } catch (error) {
+        console.error('error', error);
+    }
+}
 
+// HIDE SECTION
+function hideSection(section) {
+    section.className = 'hidden';
+}
 
+function displaySection(section, classname) {
+    section.className = classname;
+}
 
 // DISPLAY ALL HEROES
 const displayHeroes = (e) => {
@@ -111,27 +129,6 @@ prevP.addEventListener('click', e => {
 });
 
 // DETAIL PAGE
-async function getHeroesById(id) {
-    try {
-        const response = await fetch(
-            `https://gateway.marvel.com:443/v1/public/characters/${id}?${apiAutentication}`
-        );
-        const characterJson = await response.json();
-        const character = characterJson.data.results[0];
-        return character;
-    } catch (error) {
-        console.error('error', error);
-    }
-}
-
-function hideSection(section) {
-    section.className = 'hidden';
-}
-
-function displaySection(section, classname) {
-    section.className = classname;
-}
-
 async function detailHero(id) {
     hideSection(allMarvelSection);
     hideSection(background);

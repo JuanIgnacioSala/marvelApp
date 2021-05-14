@@ -1,16 +1,16 @@
-// url destino: https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=a6cbb63939c6bb41f89092331e8246b9&hash=4ad0b35656da2eddf174505d3d41b2c9
 // SEACH HERO 
 let offset = document.querySelector('#pageOffset');
 // GET ELEMENTS
-let cardhero = document.getElementById('herocard')
+let cardhero = document.getElementById('herocard');
 
 // SEARCH
-const inpSearch = document.getElementById('search-input')
+const inpSearch = document.getElementById('search-input');
 const btnSearch = document.getElementById('search-button');
 
 // DETAIL
-const characterSection = document.querySelector('#character-section');
-const allMarvelSection = document.querySelector('#all-marvel-section')
+const characterSection = document.querySelector('#detail-section');
+const allMarvelSection = document.querySelector('#all-marvel-section');
+const background = document.querySelector('#background');
 
 // GET HEROES
 const publicKey = "a6cbb63939c6bb41f89092331e8246b9";
@@ -24,7 +24,7 @@ const getAllHeroes = (offset) => {
         .then(response => response.json())
         .then(data => {
             data.data.results.forEach(e => {
-                displayHeroes(e)
+                displayHeroes(e);
             });
         })
         .catch(err => console.log(err));
@@ -53,7 +53,7 @@ const displayHeroes = (e) => {
     const imageURL = `${e.thumbnail.path}.${e.thumbnail.extension}`;
     const hero = `
         <div class="col">
-        <div class="card bgred rounded-3 h-100">
+        <div onclick="detailHero(${e.id})" class="card bgred rounded-3 h-100">
         <img style="height:100%" src="${imageURL}" class="card-img-top" alt="${e.name}">
         <div class="card-body text-center">
         <h3 class="card-title">${e.name}</h3>
@@ -111,48 +111,61 @@ prevP.addEventListener('click', e => {
 });
 
 // DETAIL PAGE
-const getHeroesById = (id) => {
-    URLId = `https://gateway.marvel.com:443/v1/public/characters/${id}?${apiAutentication}`
-    fetch(URLId)
-        .then(response => response.json())
-        .then(data => {
-            const character = data.data.results[0]
-            return character
-        })
-        .catch(err => console.log(err));
-};
+async function getHeroesById(id) {
+    try {
+        const response = await fetch(
+            `https://gateway.marvel.com:443/v1/public/characters/${id}?${apiAutentication}`
+        );
+        const characterJson = await response.json();
+        const character = characterJson.data.results[0];
+        return character;
+    } catch (error) {
+        console.error('error', error);
+    }
+}
 
-function detailHero(id) {
+function hideSection(section) {
+    section.className = 'hidden';
+}
+
+function displaySection(section, classname) {
+    section.className = classname;
+}
+
+async function detailHero(id) {
     hideSection(allMarvelSection);
-    displaySection(characterSection, 'character-container');
+    hideSection(background);
+    displaySection(characterSection, 'container');
     characterSection.innerHTML = '';
-    const character = getCharacterById(id);
+    const character = await getHeroesById(id);
     displayDetailSection(characterSection, character);
+    console.log(character);
 }
 
 function displayDetailSection(section, character) {
     const detailContainer = document.createElement('article');
+    console.log(character);
     detailContainer.innerHTML = `
-	<div class="character-section">
-		<div class="character-description">
-			<div class="character-text-container">
-				<h3 class="character-name">${character.name}</h3>
-			</div>
-			<p>
+	<div class="d-flex m-5 justify-content-center">
+		<div class=" m-auto text-center">
+				<h3 >${character.name}</h3>
+			<p class="m-5 justify-content-center" >
 				${
 					character.description === ''
 						? 'We are creating this character. No description available yet. We promise that we are working very hard to achieve it.'
 						: character.description
 				}
 			</p>
+            <a href="/index.html" class=" btn btn-red fw-bold ps-5 pe-5 mt-5" style="text-shadow: 1px 1px 3px black" type="button">BACK HOME</a>
 		</div>
+        <div>
 		<img
-			class="img"
-			src=${character.thumbnail.path}.${character.thumbnail.extension}
-			alt=${character.name}
+        class="img-thumbnail imgDetail m-auto" 
+        src=${character.thumbnail.path}.${character.thumbnail.extension}
+        alt=${character.name}
 		/>
-	</div>
-	<a href="index.html" class="regular-button back-home-btn">Back home</a>
+		</div>
+        </div>
 	`;
     section.appendChild(detailContainer)
 };

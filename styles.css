@@ -43,3 +43,7 @@
     background-color: red !important;
     text-shadow: 2px 2px 8px black;
 }
+
+.hidden {
+    display: none;
+}

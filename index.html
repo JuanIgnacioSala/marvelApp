@@ -27,10 +27,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#">FAVOURITES</a>
+                        <a class="nav-link fw-bold" href="/index.html">HOME</a>
                     </li>
                 </ul>
 
@@ -41,15 +38,15 @@
     <main>
         <!-- IMG INPUT -->
         <!-- animate__animated animate__backInRight animate__slower -->
-        <section class="background d-flex align-items-center mb-4 " id="background">
+        <section class="background d-flex align-items-center mb-4" id="background">
             <div class="container heroimg">
                 <h2 class="text-center text pb-3">
                     explore, search and find your favorite
-                    <span class="fst-italic" style="color: red; ;">superheroes</span>
+                    <span class="fst-italic" style="color: red;">superheroes</span>
                 </h2>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" id="search-input" placeholder="Search hero">
-                    <button class="btn btn-red fw-bold ps-5 pe-5" style="text-shadow: 1px 1px 3px black" type="button" id="search-button">SEARCH</button>
+                    <button class="btn btn-red fw-bold ps-5 pe-5" id="search-button" style="text-shadow: 1px 1px 3px black" type="button">SEARCH</button>
                 </div>
             </div>
         </section>
@@ -61,24 +58,25 @@
             <div class="pb-5">
                 <h1 class="text" class="" style=" padding-bottom:25px; color: red; ">superheroes</h1>
                 <hr class="redHR mb-5 ">
+
+
                 <div class="row row-cols-1 row-cols-md-4 g-4 " id='herocard'>
                 </div>
 
                 <div class="d-flex justify-content-center p-3">
-                    <button class="btn btn-red m-2"><i class="fas fa-arrow-left"></i></button>
-                    <p class="fs-4 m-3">Page <span>1</span></p>
-                    <button class="btn btn-red m-2"><i class="fas fa-arrow-right"></i></button>
+                    <button class="btn btn-red m-2" id="prev-page"> <i class="fas fa-arrow-left"></i> </button>
+                    <p class="fs-4 m-3">Page <span id="pageOffset">1</span></p>
+                    <button class="btn btn-red m-2" id="next-page"> <i class="fas fa-arrow-right"></i> </button>
                 </div>
         </section>
-        <!-- Section filter Heroes  -->
-        <section>
 
+        <section class="container" id="detail-section">
+            <div></div>
         </section>
 
-        <!-- section favorites  -->
-        <section>
 
-        </section>
+
+
     </main>
 
     <!-- scripts -->

@@ -24,7 +24,7 @@
 
 Se utilizaron las siguientes librerias externas:
 
-- Bootsrap
+- Bootstrap
 - Font Awesome
 - Animate.css
 

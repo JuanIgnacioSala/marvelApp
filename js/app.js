@@ -144,7 +144,9 @@ function displayDetailSection(section, character) {
 	<div class="d-flex m-5 justify-content-center">
 		<div class=" m-auto text-center">
 				<h3 >${character.name}</h3>
+
 			<p class="m-5 justify-content-center" >
+           
 				${
 					character.description === ''
 						? 'We are creating this character - This superhero does not have a loaded description, that is why we generate a random one.'

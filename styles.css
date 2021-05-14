@@ -49,6 +49,6 @@
 }
 
 .imgDetail {
-    max-width: 400px !important;
-    margin: 20px !important;
+    /* width: 120rem !important; */
+    margin: 8px !important;
 }

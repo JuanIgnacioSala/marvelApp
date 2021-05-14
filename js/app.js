@@ -152,7 +152,7 @@ function displayDetailSection(section, character) {
 			<p class="m-5 justify-content-center" >
 				${
 					character.description === ''
-						? 'We are creating this character. No description available yet. We promise that we are working very hard to achieve it.'
+						? 'We are creating this character - This superhero does not have a loaded description, that is why we generate a random one.'
 						: character.description
 				}
 			</p>

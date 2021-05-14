@@ -136,12 +136,10 @@ async function detailHero(id) {
     characterSection.innerHTML = '';
     const character = await getHeroesById(id);
     displayDetailSection(characterSection, character);
-    console.log(character);
 }
 
 function displayDetailSection(section, character) {
     const detailContainer = document.createElement('article');
-    console.log(character);
     detailContainer.innerHTML = `
 	<div class="d-flex m-5 justify-content-center">
 		<div class=" m-auto text-center">

@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvel App</title>
+    <title>Marvel App | Eureka Labs</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 </head>
 
 <body class="bg-dark text-light">
@@ -36,33 +39,35 @@
     </nav>
 
     <main>
-        <!-- input -->
-        <section class="background d-flex align-items-center mb-4" id="background">
+        <!-- IMG INPUT -->
+        <!-- animate__animated animate__backInRight animate__slower -->
+        <section class="background d-flex align-items-center mb-4 " id="background">
             <div class="container heroimg">
                 <h2 class="text-center text pb-3">
                     explore, search and build your list of
                     <span class="fst-italic" style="color: red; ;">superheroes</span>
                 </h2>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="search-input" placeholder="Search superheroes">
-                    <button class="btn btn-danger fw-bold ps-5 pe-5" style="text-shadow: 1px 1px 3px black" type="button" id="search-button">SEARCH</button>
+                    <input type="text" class="form-control" id="search-input" placeholder="Search hero">
+                    <button class="btn btn-red fw-bold ps-5 pe-5" style="text-shadow: 1px 1px 3px black" type="button" id="search-button">SEARCH</button>
                 </div>
             </div>
         </section>
 
 
         <!-- Search All Heroes  -->
-        <section class="container all-heroes" id="all-marvel-section">
-            <div>
-                <h1 class="text" class="fst-italic" style="color: red;">superheroes </h1>
-                <hr class="redHR mb-3">
-                <div class="card-group">
-                    <div class="card">
-                        <img src="${}" class="card-img-top" alt="${}">
-                        <div class="card-body">
-                            <h3 class="card-title">${}</h5>
-                        </div>
-                    </div>
+        <!-- animate__animated animate__backInLeft animate__slower -->
+        <section class="container all-heroes " id="all-marvel-section">
+            <div class="pb-5">
+                <h1 class="text" class="" style=" padding-bottom:25px; color: red; ">superheroes</h1>
+                <hr class="redHR mb-5 ">
+                <div class="row row-cols-1 row-cols-md-4 g-4 " id='herocard'>
+                </div>
+
+                <div class="d-flex justify-content-center p-3">
+                    <button class="btn btn-red m-2"><i class="fas fa-arrow-left"></i></button>
+                    <p class="fs-4 m-3">Page <span>1</span></p>
+                    <button class="btn btn-red m-2"><i class="fas fa-arrow-right"></i></button>
                 </div>
         </section>
         <!-- Section filter Heroes  -->
@@ -77,8 +82,9 @@
     </main>
 
     <!-- scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js " integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js " integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ " crossorigin="anonymous "></script>
+    <script src="https://kit.fontawesome.com/eac712f1ae.js" crossorigin="anonymous"></script>
     <script src="js/api.js"></script>
 </body>
 

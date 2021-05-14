@@ -1,12 +1,8 @@
-h1 {
-    padding: 5px;
-}
-
 .background {
-    background-image: linear-gradient( rgba(255, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('assets/background.jpg');
+    background-image: linear-gradient( rgba(125, 0, 0, 0.5), rgba(10, 10, 10, 0.7)), url('assets/background.jpg');
     background-size: cover;
     background-position: center;
-    height: 420px;
+    height: 450px;
 }
 
 .heroimg .text {
@@ -37,6 +33,13 @@ h1 {
     margin: auto;
 }
 
-h3 {
-    color: gray;
+.btn-red {
+    color: white !important;
+    background-color: red !important;
+}
+
+.bgred {
+    color: white !important;
+    background-color: red !important;
+    text-shadow: 2px 2px 8px black;
 }
